@@ -54,7 +54,7 @@ class mod_skype_mod_form extends moodleform_mod {
         $mform->addHelpButton('name', 'skypename', 'skype');
 
     /// Adding the standard "intro" and "introformat" fields
-        $this->add_intro_editor();
+        $this->standard_intro_elements();
 
 //-------------------------------------------------------------------------------
     /// Adding the rest of skype settings, spreeading all them into this fieldset
