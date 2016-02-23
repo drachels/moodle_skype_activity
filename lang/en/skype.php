@@ -31,7 +31,7 @@ defined('MOODLE_INTERNAL') || die();
 // Following lines added by AL Rachels
 $string['skype:view'] = 'Can view';
 $string['skype:addinstance'] = 'Can add instance';
-
+$string['skype:manageentries'] = 'Manage entries';
 $string['modulename'] = 'Skype';
 $string['modulenameplural'] = 'Skypes';
 $string['skypefieldset'] = 'Custom example fieldset';
