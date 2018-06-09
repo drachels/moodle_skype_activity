@@ -70,7 +70,7 @@ $event->trigger();
 $PAGE->set_url('/mod/skype/view.php', array('id' => $cm->id));
 $PAGE->set_title($skype->name);
 $PAGE->set_heading($course->shortname);
-$PAGE->set_button(update_module_button($cm->id, $course->id, get_string('modulename', 'skype')));
+//$PAGE->set_button(update_module_button($cm->id, $course->id, get_string('modulename', 'skype')));
 
 // other things you may want to set - remove if not needed
 //$PAGE->set_cacheable(false);
