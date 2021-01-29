@@ -48,9 +48,6 @@ class restore_skype_activity_structure_step extends restore_activity_structure_s
 
         // Define each element separated.
         $paths[] = new restore_path_element('skype', '/activity/skype');
-        if ($userinfo) {
-            $paths[] = new restore_path_element('skype_grade', '/activity/skype/grades/grade');
-        }
 
         // Return the paths wrapped into standard activity structure.
         return $this->prepare_activity_structure($paths);
@@ -112,77 +109,6 @@ class restore_skype_activity_structure_step extends restore_activity_structure_s
         $data->endtime = $this->apply_date_offset($data->endtime);
 
         $newitemid = $DB->insert_record('skype_checks', $data);
-    }
-
-    /**
-     * Process a grade restore
-     * @param object $data The data in object form
-     * @return void
-     */
-    protected function process_skype_grade($data) {
-        global $DB;
-
-        $data = (object)$data;
-        $oldid = $data->id;
-
-        $data->skype = $this->get_new_parentid('skype');
-        $data->userid = $this->get_mappingid('user', $data->userid);
-        $data->timetaken = $this->apply_date_offset($data->timetaken);
-
-        $newitemid = $DB->insert_record('skype_grades', $data);
-        $this->set_mapping('skype_grade', $oldid, $newitemid);
-    }
-
-    /**
-     * Process a layout restore - TODO: Check on remving this as I am pretty sure it is not needed.
-     * @param object $data The data in object form
-     * @return void
-     */
-    protected function process_skype_layout($data) {
-        global $DB;
-
-        $data = (object)$data;
-        $oldid = $data->id;
-
-        $data->skype = $this->get_new_parentid('skype');
-
-        $newitemid = $DB->insert_record('skype_layouts', $data);
-        $this->set_mapping('skype_layout', $oldid, $newitemid);
-    }
-    /**
-     * Process a lesson restore
-     * @param object $data The data in object form
-     * @return void
-     */
-    protected function process_skype_lesson($data) {
-        global $DB;
-
-        $data = (object)$data;
-        $oldid = $data->id;
-
-        $data->skype = $this->get_new_parentid('skype');
-
-        $newitemid = $DB->insert_record('skype_lessons', $data);
-        $this->set_mapping('skype_lesson', $oldid, $newitemid);
-    }
-
-    /**
-     * Process an exercise restore
-     * @param object $data The data in object form
-     * @return void
-     */
-    protected function process_skype_exercise($data) {
-        global $DB;
-
-        $data = (object)$data;
-        $oldid = $data->id;
-        $oldlesson = $data->lesson;
-
-        $data->skype = $this->get_new_parentid('lesson');
-
-        $newitemid = $DB->insert_record('skype_exercises', $data);
-        $this->set_mapping('skype_exercise', $oldid, $newitemid);
-        $this->set_mapping('skype_exercise', $oldlesson, $newitemid);
     }
 
     /**

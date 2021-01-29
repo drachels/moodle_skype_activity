@@ -49,7 +49,8 @@ the css style entries to a styles.css file.
 20200518 Skype_407 Got oops.php working with bg.png moved to the pix folder,
 but still need to verify that oops.php gets called into action.
 20200520 Push all recent changes to github, with bump to this version.
-
+=== 3.6.1 ===
+20210129 Fixed variable name capitalization error in backup_skype_activity_task.class.php file.
 
 
 === Notes ===

@@ -73,10 +73,10 @@ class restore_skype_activity_task extends restore_activity_task {
     static public function define_decode_rules() {
         $rules = array();
 
-        $rules[] = new restore_decode_rule('skypeVIEWBYID',
+        $rules[] = new restore_decode_rule('SKYPEVIEWBYID',
                                            '/mod/skype/view.php?id=$1',
                                            'course_module');
-        $rules[] = new restore_decode_rule('skypeINDEX',
+        $rules[] = new restore_decode_rule('SKYPEINDEX',
                                            '/mod/skype/index.php?id=$1',
                                            'course');
 

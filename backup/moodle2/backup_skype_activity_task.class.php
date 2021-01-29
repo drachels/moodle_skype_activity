@@ -64,11 +64,11 @@ class backup_skype_activity_task extends backup_activity_task {
 
         // Link to the list of skypes.
         $search = "/(".$base."\/mod\/skype\/index.php\?id\=)([0-9]+)/";
-        $content = preg_replace($search, '$@skypeINDEX*$2@$', $content);
+        $content = preg_replace($search, '$@SKYPEINDEX*$2@$', $content);
 
         // Link to skype view by moduleid.
         $search = "/(".$base."\/mod\/skype\/view.php\?id\=)([0-9]+)/";
-        $content = preg_replace($search, '$@skypeVIEWBYID*$2@$', $content);
+        $content = preg_replace($search, '$@SKYPEVIEWBYID*$2@$', $content);
 
         return $content;
     }
