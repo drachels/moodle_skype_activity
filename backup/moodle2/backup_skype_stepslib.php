@@ -25,16 +25,17 @@
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * Define the complete skype structure for backup, with file and id annotations
+ * Define the complete skype structure for backup, with file and id annotations.
  *
  * @package mod_skype
- * @copyright 2016 onwards AL Rachels (drachels@drachels.co9m)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright 2016 onwards AL Rachels (drachels@drachels.com)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
  */
 class backup_skype_activity_structure_step extends backup_activity_structure_step {
 
     /**
-     * Define the structure for the assign activity
+     * Define the complete data structure for backup, with file and id annotations.
+     *
      * @return void
      */
     protected function define_structure() {
@@ -43,15 +44,15 @@ class backup_skype_activity_structure_step extends backup_activity_structure_ste
         $userinfo = $this->get_setting_value('userinfo');
 
         // Define each element separated.
-        $skype = new backup_nested_element('skype', array('id'), array(
-                                              'name',
-                                              'intro',
-                                              'chattime',
-                                              'introformat',
-                                              'timecreated',
-                                              'timemodified',
-                                              'timeopen',
-                                              'timeclose'));
+        $skype = new backup_nested_element('skype', array('id'),
+                                           array('name',
+                                                 'intro',
+                                                 'chattime',
+                                                 'introformat',
+                                                 'timecreated',
+                                                 'timemodified',
+                                                 'timeopen',
+                                                 'timeclose'));
 
         // Define sources.
         $skype->set_source_table('skype', array('id' => backup::VAR_ACTIVITYID));
