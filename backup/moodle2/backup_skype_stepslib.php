@@ -34,9 +34,9 @@ defined('MOODLE_INTERNAL') || die();
 class backup_skype_activity_structure_step extends backup_activity_structure_step {
 
     /**
-     * Define the complete data structure for backup, with file and id annotations.
+     * Defines the structure of the 'skype' element inside the skype.xml file
      *
-     * @return void
+     * @return backup_nested_element
      */
     protected function define_structure() {
 

@@ -24,10 +24,11 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-require_once($CFG->dirroot . '/mod/skype/backup/moodle2/restore_skype_stepslib.php'); // Because it exists (must).
+require_once($CFG->dirroot . '/mod/skype/backup/moodle2/restore_skype_stepslib.php');
 
 /**
- * skype restore task that provides all the settings and steps to perform one complete restore of the activity.
+ * Skype restore task that provides all the settings and steps to perform one
+ * complete restore of the activity.
  *
  * @package mod_skype
  * @copyright 2016 onwards AL Rachels (drachels@drachels.com).
