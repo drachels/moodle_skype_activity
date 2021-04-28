@@ -50,11 +50,9 @@ function is_available($skype) {
 function printskypeuserslist($skypeusers) {
     global $CFG, $USER, $OUTPUT;
 
-    // Need to verify this as there is NO skypeCheck.js file at the loaction.
     $userlist = "<script src=\"$CFG->wwwroot/mod/skype/js/skypeCheck.js\"></script>
-                 <script>
-
-                 function addthisname(skypeid){
+    <script>
+        function addthisname(skypeid){
             var skypenamelist = '';
             for (i = 0; i < document.makeskypecall.userskypeids.length; i++){
                 if(document.makeskypecall.userskypeids[i].checked == true){
@@ -63,17 +61,12 @@ function printskypeuserslist($skypeusers) {
             }
             if(skypenamelist !=''){
                 document.getElementById('display_call_all_skype').style.display = 'block';
-                document.getElementById('who_to_call').innerHTML='<a href=\"skype:'+skypenamelist+'?call\">
-                <img src=\"pix/createconference.gif\" border=\"0\" alt=\"Call\" title=\"Call\" onclick=\"return skypeCheck();\">
-                </a> <a href=\"skype:'+skypenamelist+'?chat\">
-                <img src=\"pix/createchat.gif\" border=\"0\" alt=\"Chat\"  title=\"Chat\" onclick=\"return skypeCheck();\">
-                </a> <a href=\"skype:'+skypenamelist+'?voicemail\">
-                <img src=\"pix/sendvoicemail.gif\" alt=\"Voice Mail\" title=\"Voice Mail\" border=\"0\" onclick=
-                \"return skypeCheck();\"></a> <a href=\"skype:'+skypenamelist+'?add\">
-                <img src=\"pix/addcontact.gif\" border=\"0\" alt=\"Add Contact\" title=\"Add Contact\" onclick=
-                \"return skypeCheck();\"></a> <a href=\"skype:'+skypenamelist+'?sendfile\">
-                <img src=\"pix/send.gif\" border=\"0\"  alt=\"Send File\" title=\"Send File\" onclick=
-                \"return skypeCheck();\"></a>';
+                document.getElementById('who_to_call').innerHTML='<a href=\"skype:'+skypenamelist+'?call\">"
+                ."<img src=\"pix/createconference.gif\" border=\"0\" alt=\"Call\" title=\"Call\" onclick=\"return skypeCheck();\"></a>"
+                ." <a href=\"skype:'+skypenamelist+'?chat\"><img src=\"pix/createchat.gif\" border=\"0\" alt=\"Chat\"  title=\"Chat\" onclick=\"return skypeCheck();\"></a>"
+                ." <a href=\"skype:'+skypenamelist+'?voicemail\"><img src=\"pix/sendvoicemail.gif\" alt=\"Voice Mail\" title=\"Voice Mail\" border=\"0\" onclick=\"return skypeCheck();\"></a>"
+                ." <a href=\"skype:'+skypenamelist+'?add\"><img src=\"pix/addcontact.gif\" border=\"0\" alt=\"Add Contact\" title=\"Add Contact\" onclick=\"return skypeCheck();\"></a>"
+                ." <a href=\"skype:'+skypenamelist+'?sendfile\"><img src=\"pix/send.gif\" border=\"0\"  alt=\"Send File\" title=\"Send File\" onclick=\"return skypeCheck();\"></a>';
             }else{
                 document.getElementById('display_call_all_skype').style.display = 'none';
                 if(document.getElementById('who_to_call')){
@@ -96,8 +89,10 @@ function printskypeuserslist($skypeusers) {
     if (!$skypeusers) {
         return '';
     }
+    $all_userskype = '';
 
-    foreach ($skypeusers as $user) { // Print_user_picture.
+    // Print_user_picture and other details.
+    foreach ($skypeusers as $user) {
         if (empty($user->skype)) {
             $disabled = " disabled='disabled'";
             $userskypeid = get_string("noskypeid", "skype");
