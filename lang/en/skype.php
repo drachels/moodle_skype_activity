@@ -41,6 +41,7 @@ $string['options'] = 'Contact';
 $string['photo'] = 'Photo';
 $string['pluginadministration'] = 'Skype administration';
 $string['pluginname'] = 'Skype';
+$string['privacy:metadata'] = 'Skype module does not store private data.';
 $string['returnto'] = 'Return to {$a}';
 $string['skype:addinstance'] = 'Can add instance';
 $string['skype:manageentries'] = 'Manage entries';
@@ -59,4 +60,3 @@ $string['type'] = 'Type';
 $string['updateskypeid'] = 'Update your Skype ID from your profile page';
 $string['updateskypeidnote'] = 'In order to participate in skype activity, you need to update you Skype ID in the system. {$a}';
 $string['withselected'] = 'With Selected (through check boxes):';
-
